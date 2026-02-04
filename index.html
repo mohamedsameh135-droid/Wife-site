@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>الي سامح💖</title>
+
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      background: #ffe6eb;
+      direction: rtl;
+    }
+
+    .box {
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      margin-bottom: 40px;
+      font-size: 24px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    button {
+      font-size: 18px;
+      padding: 12px 30px;
+      cursor: pointer;
+      transition: transform 0.15s ease-out;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h2>يا سامح ♥️</h2>
+
+    <h1>
+      ايه رأيك تتجوز انت و مرام و تعيشوا في الفيلا معانا ؟ ♥️
+    </h1>
+
+    <div class="buttons">
+      <button id="yes">Yes 😅</button>
+      <button onclick="noClicked()">No 😌</button>
+    </div>
+  </div>
+
+  <script>
+    const yesBtn = document.getElementById("yes");
+
+    document.addEventListener("mousemove", (e) => {
+      const rect = yesBtn.getBoundingClientRect();
+
+      const dx = e.clientX - (rect.left + rect.width / 2);
+      const dy = e.clientY - (rect.top + rect.height / 2);
+
+      const distance = Math.sqrt(dx * dx + dy * dy);
+
+      if (distance < 120) {
+        const x = Math.random() * 500 - 250;
+        const y = Math.random() * 300 - 150;
+
+        yesBtn.style.transform = `translate(${x}px, ${y}px)`;
+      }
+    });
+
+    function noClicked() {
+      alert("اجابة موفقة يا خطيب بنتي انا شايفه كدا برضو و متفقة معاك 😂♥️");
+    }
+  </script>
+
+</body>
+</html>
